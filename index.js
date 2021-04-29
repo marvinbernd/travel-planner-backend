@@ -3,6 +3,8 @@ const app = express();
 
 const trips = require('./routes/trips');
 
+require('./startup/prod')(app);
+
 app.use(express.static('public'));
 app.use(express.json());
 app.use('/api/trips', trips);
